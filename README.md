@@ -1,7 +1,12 @@
 # RPG-Galgame-Framework
 Framework based on Unity for Galgame with RPG | 基于 Unity 的 RPG+ Galgame/横板RPG视觉小说游戏框架
+<p></p>
 
-[![forthebadge](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODguMTI1MDE5MDczNDg2MzMiIGhlaWdodD0iMzUiIHZpZXdCb3g9IjAgMCAxODguMTI1MDE5MDczNDg2MzMgMzUiPjxyZWN0IHdpZHRoPSI4MS41MjA4Mzk2OTExNjIxMSIgaGVpZ2h0PSIzNSIgZmlsbD0iIzMwNjI3YyIvPjxyZWN0IHg9IjgxLjUyMDgzOTY5MTE2MjExIiB3aWR0aD0iMTA2LjYwNDE3OTM4MjMyNDIyIiBoZWlnaHQ9IjM1IiBmaWxsPSIjMzg5QUQ1Ii8+PHRleHQgeD0iNDAuNzYwNDE5ODQ1NTgxMDU1IiB5PSIyMS41IiBmb250LXNpemU9IjEyIiBmb250LWZhbWlseT0iJ1JvYm90bycsIHNhbnMtc2VyaWYiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5MSUNFTkNFPC90ZXh0Pjx0ZXh0IHg9IjEzNC44MjI5MjkzODIzMjQyMiIgeT0iMjEuNSIgZm9udC1zaXplPSIxMiIgZm9udC1mYW1pbHk9IidNb250c2VycmF0Jywgc2Fucy1zZXJpZiIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC13ZWlnaHQ9IjkwMCIgbGV0dGVyLXNwYWNpbmc9IjIiPkFQQUNIRTIuMDwvdGV4dD48L3N2Zz4=)](https://forthebadge.com)
+[![licence-apache2 0](https://github.com/user-attachments/assets/86e089c7-918b-4865-a526-709a179fe8d7)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
+
+
+
 
 # 支持的游戏开发类型
 - Galgame
@@ -11,5 +16,7 @@ Framework based on Unity for Galgame with RPG | 基于 Unity 的 RPG+ Galgame/�
 # 使用方法
 创建剧情
 ![image](https://github.com/user-attachments/assets/90e994e7-c07a-40dc-a9eb-cabf157f8aa9)
-Galgame System绑定好对应的组件
+
+<p>Galgame System绑定好对应的组件</p>
+
 ![image](https://github.com/user-attachments/assets/e750ae90-262d-40bc-a7d7-0f731592731f)
