@@ -20,3 +20,5 @@ Framework based on Unity for Galgame with RPG | 基于 Unity 的 RPG+ Galgame/�
 <p>Galgame System绑定好对应的组件</p>
 
 ![image](https://github.com/user-attachments/assets/e750ae90-262d-40bc-a7d7-0f731592731f)
+
+# 未来开发
