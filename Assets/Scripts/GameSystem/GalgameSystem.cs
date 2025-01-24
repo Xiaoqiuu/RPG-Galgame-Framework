@@ -1,26 +1,45 @@
+/*
+ * APACHE LICENSE 2.0 BASIC
+ * Project URL: https://www.github.com/Xiaoqiuu/RPG-Galgame-Framework
+ * Framework Version: 0.2
+ * Update Data: 2025.1.25
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+
+[AddComponentMenu("RPG-Galgame-Framework/System/GalgameSystem")]
+[HelpURL("https://www.github.com/Xiaoqiuu/RPG-Galgame-Framework")]
 
 public class GalgameSystem : MonoBehaviour
 {
-    public GalgameDataStructure dialogueDataListSO;
+    [Header("Scenario Data")]
+    [Tooltip("载入游戏的剧情数据 Load the dialogue data.")]
+    public GalgameDataStructure galgameDialogueData;
 
     // UI Elements
+    [Header("UI Elements")]
     public Image characterImage;
     public Text dialogueContentText;
-    public GameObject galConversation;
+    [FormerlySerializedAs("galConversation")] public GameObject galConversationPanel;
     public GameObject choicePanel; // 新增选项面板
     public Button optionButton1;
     public Button optionButton2;
     public Text optionText1;
     public Text optionText2;
 
+    // Controller
+    [Header("Scenario Controller")]
+    [Tooltip("当前读取剧情的ID 默认值从0开始读取 -1为关闭对话的值 currentDialogueID, first value is 0.")]
+    [Range(-1,67757)]
+    public int currentDialogueID = 0;
+    
     // 动态角色贴图字典
     private Dictionary<string, Dictionary<int, Sprite>> characterSpriteDic = new Dictionary<string, Dictionary<int, Sprite>>();
 
-    public int currentDialogueID = 0;
+    
     private Coroutine typingCoroutine;
     private bool isTyping = false;
     private bool spaceKeyEnabled = true; // 控制空格键是否启用
@@ -32,7 +51,7 @@ public class GalgameSystem : MonoBehaviour
 
     void Update()
     {
-        if (galConversation.activeSelf && Input.GetKeyDown(KeyCode.Space))
+        if (galConversationPanel.activeSelf && Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
             {
@@ -54,9 +73,9 @@ public class GalgameSystem : MonoBehaviour
 
     public void ShowDialogue(int dialogueID)
     {
-        galConversation.SetActive(true);
+        galConversationPanel.SetActive(true);
         currentDialogueID = dialogueID;
-        if (dialogueDataListSO.dialogueDataDic.TryGetValue(dialogueID, out var dialogueData))
+        if (galgameDialogueData.dialogueDataDic.TryGetValue(dialogueID, out var dialogueData))
         {
             // 启动文字逐字显示协程
             if (typingCoroutine != null)
@@ -82,7 +101,7 @@ public class GalgameSystem : MonoBehaviour
 
     public void ShowNextDialogue()
     {
-        if (dialogueDataListSO.dialogueDataDic.TryGetValue(currentDialogueID, out var dialogueData))
+        if (galgameDialogueData.dialogueDataDic.TryGetValue(currentDialogueID, out var dialogueData))
         {
             if (dialogueData.Options.Count == 0)
             {
@@ -100,11 +119,11 @@ public class GalgameSystem : MonoBehaviour
 
     public void StartConversation()
     {
-        galConversation.SetActive(true);
-        dialogueDataListSO.Initialization();
+        galConversationPanel.SetActive(true);
+        galgameDialogueData.Initialization();
         InitializeCharacterSprites();
 
-        if (dialogueDataListSO.dialogueDataDic.ContainsKey(0))
+        if (galgameDialogueData.dialogueDataDic.ContainsKey(0))
         {
             ShowDialogue(0);
         }
@@ -112,13 +131,13 @@ public class GalgameSystem : MonoBehaviour
 
     public void EndConversation()
     {
-        galConversation.SetActive(false);
+        galConversationPanel.SetActive(false);
         choicePanel.SetActive(false); // 确保选项面板也被关闭
     }
 
     private void InitializeCharacterSprites()
     {
-        foreach (var character in dialogueDataListSO.characterList)
+        foreach (var character in galgameDialogueData.characterList)
         {
             if (!characterSpriteDic.ContainsKey(character.Name))
             {
@@ -177,7 +196,7 @@ public class GalgameSystem : MonoBehaviour
 
     private void CompleteDialogueText()
     {
-        if (dialogueDataListSO.dialogueDataDic.TryGetValue(currentDialogueID, out var dialogueData))
+        if (galgameDialogueData.dialogueDataDic.TryGetValue(currentDialogueID, out var dialogueData))
         {
             dialogueContentText.text = dialogueData.Content;
             isTyping = false;

@@ -758,16 +758,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e11c9341e022c43961bd8f2ef5c053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueDataListSO: {fileID: 11400000, guid: b192b8c1cc503ac48a518456bc6677bc, type: 2}
+  galgameDialogueData: {fileID: 11400000, guid: b192b8c1cc503ac48a518456bc6677bc, type: 2}
   characterImage: {fileID: 1906735680}
   dialogueContentText: {fileID: 1812378277}
-  galConversation: {fileID: 71112095}
+  galConversationPanel: {fileID: 71112095}
   choicePanel: {fileID: 177507846}
   optionButton1: {fileID: 1931817270}
   optionButton2: {fileID: 1569980689}
   optionText1: {fileID: 1283541858}
   optionText2: {fileID: 936121211}
-  currentDialogueID: 0
+  currentDialogueID: -1
 --- !u!1 &521542266
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,7 +939,6 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
