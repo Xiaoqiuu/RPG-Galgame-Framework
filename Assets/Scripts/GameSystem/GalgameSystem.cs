@@ -2,7 +2,7 @@
  * APACHE LICENSE 2.0 BASIC
  * Project URL: https://www.github.com/Xiaoqiuu/RPG-Galgame-Framework
  * Framework Version: 0.2
- * Update Data: 2025.1.25
+ * Update Data: 2025.1.26
 */
 using System.Collections;
 using System.Collections.Generic;
